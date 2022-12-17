@@ -15,7 +15,7 @@ const CheckoutProduct = ({ item, hideButton }) => {
       <div className="checkout-product-info">
         <p className="checkout-product-title">{item.title}</p>
         <p className="checkout-product-price">
-          <strong>$</strong>
+          <strong>&#8377;</strong>
           <strong>{item.price}</strong>
         </p>
         <div className="checkout-product-rating">
