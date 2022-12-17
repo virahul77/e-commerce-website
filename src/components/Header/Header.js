@@ -11,7 +11,9 @@ import { getTotalQty } from "../../utils/BasketTotal";
 const Header = () => {
   const dispatch = useDispatch();
   const totalRef = useRef();
-  const { user, basket } = useSelector(state => state);
+  let state = useSelector(state => state);
+  localStorage.setItem('amazon',JSON.stringify(state));
+  const { user, basket } = state;
 
   //for animation effect on total section
   useEffect(()=>{

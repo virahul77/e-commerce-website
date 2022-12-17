@@ -28,7 +28,6 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        // dispatch(loginError(error.message))
       });
     setEmail('')
     setPassword('');

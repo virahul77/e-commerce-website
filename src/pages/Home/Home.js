@@ -13,8 +13,9 @@ import BackToTop from "../../components/BackToTop/BackToTop";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  let {searchTerm,category} = useSelector(state => state);
-  console.log(searchTerm,category);
+  let state = useSelector(state => state);
+  let {searchTerm,category} = state;
+  localStorage.setItem('amazon',JSON.stringify(state));
   let filterProducs = products.filter(item => {
     if(category==='all') return true;
     return item.category === category;
