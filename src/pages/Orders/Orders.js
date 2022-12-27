@@ -5,7 +5,7 @@ import SingleOrder from "../../components/SingleOrder/SingleOrder";
 import { useSelector } from "react-redux";
 
 const Orders = () => {
-  const { user } = useSelector((state) => state.data);
+  const { user } = useSelector((state) => state);
   const [orders, setOrders] = useState([]);
 
   // useEffect(() => {
