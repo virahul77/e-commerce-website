@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -12,12 +12,20 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Orders from "./pages/Orders/Orders";
 import Footer from "./components/footer/Footer";
+import { useDispatch } from "react-redux";
+import { changeCatogery, setSearchTerm } from "./redux/basketSlice";
 
 const promise = loadStripe(
   "pk_live_51MCOP4SFI5WWY4bcAhIMziRLLdey44zs9NH0mz1mFP8qYsTgV7p7dt5hCP36NbeM14dfcbP138bwvhRcq0Weq3hr00kdZUfesW"
 );
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(setSearchTerm(''));
+    dispatch(changeCatogery('all'));
+  },[])
   return (
     <BrowserRouter>
       <div className="App">
